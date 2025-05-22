@@ -6,6 +6,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import userRoutes from './routes/userRoutes.js';
 import attendanceRoutes from './routes/attendanceRoutes.js';
 import leaveRoutes from './routes/leaveRoutes.js';
+import payrollRoutes from './routes/payrollRoutes.js';
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/attendance', attendanceRoutes);
 app.use('/api/leaves', leaveRoutes);
+app.use('/api/payroll', payrollRoutes);
 
 app.get('/', (req, res) => {
   res.send('API is running...');
