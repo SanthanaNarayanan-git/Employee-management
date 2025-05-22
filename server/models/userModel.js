@@ -24,11 +24,44 @@ const userSchema = mongoose.Schema(
     },
     department: {
       type: String,
-      required: false,
+      required: true,
     },
     position: {
       type: String,
-      required: false,
+      required: true,
+    },
+    employeeId: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    joinDate: {
+      type: Date,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
+    emergencyContact: {
+      type: String,
+      required: true,
+    },
+    emergencyPhone: {
+      type: String,
+      required: true,
+    },
+    fingerprint: {
+      type: String,
+      default: null,
+    },
+    isActive: {
+      type: Boolean,
+      default: true,
     },
   },
   {

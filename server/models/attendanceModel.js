@@ -34,6 +34,21 @@ const attendanceSchema = mongoose.Schema(
       required: false,
       default: 0,
     },
+    regularized: {
+      type: Boolean,
+      default: false,
+    },
+    regularizationReason: {
+      type: String,
+    },
+    regularizationStatus: {
+      type: String,
+      enum: ['pending', 'approved', 'rejected'],
+    },
+    regularizedBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
   },
   {
     timestamps: true,
