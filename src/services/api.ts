@@ -18,19 +18,19 @@ export const attendanceAPI = {
 
 export const leaveAPI = {
   createLeave: (data: any) => 
-    axios.post('/leaves', data),
+    axios.post('/api/leaves', data),
   
   getUserLeaves: () => 
-    axios.get('/leaves'),
+    axios.get('/api/leaves'),
   
   getAllLeaves: (status?: string, startDate?: string, endDate?: string) => 
-    axios.get('/leaves/all', { params: { status, startDate, endDate } }),
+    axios.get('/api/leaves/all', { params: { status, startDate, endDate } }),
   
   updateLeaveStatus: (id: string, data: any) => 
-    axios.put(`/leaves/${id}`, data),
+    axios.put(`/api/leaves/${id}`, data),
   
   cancelLeave: (id: string) => 
-    axios.delete(`/leaves/${id}`),
+    axios.delete(`/api/leaves/${id}`),
 };
 
 export const payrollAPI = {
